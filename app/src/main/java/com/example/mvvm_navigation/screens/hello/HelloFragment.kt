@@ -27,8 +27,6 @@ class HelloFragment : BaseFragment() {
         binding = FragmentHelloBinding.inflate(layoutInflater, container, false)
 
 
-
-
         return binding.root
     }
 }
