@@ -12,11 +12,11 @@ import com.example.mvvm_navigation.screens.base.screenViewModel
 
 class HelloFragment : BaseFragment() {
 
-    class Screen: BaseScreen
+    class Screen : BaseScreen
 
     private lateinit var binding: FragmentHelloBinding
 
-    override val viewModel: BaseViewModel by screenViewModel<HelloViewModel>()
+    override val viewModel: HelloViewModel by screenViewModel<HelloViewModel>()
 
 
     override fun onCreateView(
@@ -26,6 +26,11 @@ class HelloFragment : BaseFragment() {
     ): View {
         binding = FragmentHelloBinding.inflate(layoutInflater, container, false)
 
+        binding.editButton.setOnClickListener { viewModel.onEditPressed() }
+
+        viewModel.currentMessageLiveData.observe(viewLifecycleOwner) {
+            binding.valueTextView.text = it
+        }
 
         return binding.root
     }
