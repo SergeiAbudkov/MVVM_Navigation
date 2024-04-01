@@ -6,10 +6,11 @@ import com.example.mvvm_navigation.R
 import com.example.mvvm_navigation.navigator.Navigator
 import com.example.mvvm_navigation.screens.base.BaseViewModel
 import com.example.mvvm_navigation.screens.edit.EditFragment
+import com.example.mvvm_navigation.screens.hello.HelloFragment.Screen
 
 class HelloViewModel(
     private val navigator: Navigator,
-    screen: HelloFragment.Screen
+    screen: Screen
 ) : BaseViewModel() {
 
     private val _currentMessageLiveData = MutableLiveData<String>()

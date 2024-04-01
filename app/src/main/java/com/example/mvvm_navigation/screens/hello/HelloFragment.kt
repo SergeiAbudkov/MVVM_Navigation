@@ -26,7 +26,7 @@ class HelloFragment : BaseFragment() {
     ): View {
         binding = FragmentHelloBinding.inflate(layoutInflater, container, false)
 
-        binding.editButton.setOnClickListener { viewModel.onEditPressed() }
+        binding.editButton.setOnClickListener { viewModel.onEditPressed()  }
 
         viewModel.currentMessageLiveData.observe(viewLifecycleOwner) {
             binding.valueTextView.text = it
